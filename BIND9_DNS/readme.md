@@ -1,0 +1,9 @@
+- reated related folter to task
+- Install BIND and bind utils
+- add different zone and test it to resolve any hostname
+- Configure Master and Slave
+   - Make first zone master on one host and second on different host
+- Configure Reverse zone and test it 
+    - dig -x “IP address” should return the domain name
+- Map one domain name to another
+- After each change in the master zone file, the entries must be copied to the slave dns
