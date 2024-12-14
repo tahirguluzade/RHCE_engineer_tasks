@@ -6,4 +6,4 @@
 - Configure Reverse zone and test it 
     - dig -x “IP address” should return the domain name
 - Map one domain name to another
-- After each change in the master zone file, the entries must be copied to the slave dns
+- After each change in the master zone file, the entries must be copied to the slave dns.
