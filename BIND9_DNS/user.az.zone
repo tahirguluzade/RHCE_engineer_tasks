@@ -1,0 +1,20 @@
+$TTL 3H
+@       IN SOA  @ ns1.user.az. (
+                                        0       ; serial
+                                        1D      ; refresh
+                                        1H      ; retry
+                                        1W      ; expire
+                                        3H )    ; minimum
+        NS      @
+        A       127.0.0.1
+        AAAA    ::1
+
+@     IN    NS   user.az.
+11    IN    PTR  ali.user.az.
+12    IN    PTR  sara.user.az.
+30    IN    PTR  bob.user.az.
+
+
+# we have already specified 134.168.192.in-addr.arpa in 
+# named.conf file so here in zone file we only need to 
+# mention last digit of IP like .11 .12 .30
