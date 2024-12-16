@@ -33,15 +33,12 @@ slave configuration is in
 
 <img src="../images/reverse-zone.png" width=500 height=100>
 
-#### 5. Mapping one domain to another one.
-<<<<<<< HEAD
+#### 5. Mapping one domain to another one
+
 - we use CNAME record for domain aliases.(look records in `fwd.mystore.hu.zone`). Let's see how changes applied.
-<img src="../images/CNAME.png" width=400 height=200>
-=======
-- we use CNAME record for domain aliases.(look records in `fwd.mystore.hu.db`). Let's see how changes applied.
 
 <img src="../images/CNAME.png" width=500 height=250>
->>>>>>> 6daeaf77a30bf85ae18d299e46f43197a1be5496
+
 
 #### 6. To force slave immediately update when master zone changed. 
 To do this we have to add  below syntax to `/etc/named.conf ` in options section check `named.conf` file.
