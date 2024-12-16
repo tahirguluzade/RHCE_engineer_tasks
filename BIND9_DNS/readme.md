@@ -1,6 +1,5 @@
-- reated related folter to task
 - Install BIND and bind utils
-- add different zone and test it to resolve any hostname
+- Add different zone and test it to resolve any hostname
 - Configure Master and Slave
    - Make first zone master on one host and second on different host
 - Configure Reverse zone and test it 
