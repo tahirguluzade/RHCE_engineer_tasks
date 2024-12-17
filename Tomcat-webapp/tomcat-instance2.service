@@ -1,0 +1,27 @@
+[Unit]
+Description=Tomcat sample app instance2
+After=syslog.target network.target
+
+[Service]
+Type=forking
+
+User=tomcat9
+Group=tomcat9
+
+
+Environment="JAVA_HOME=/home/tomcat9/java/openlogic-openjdk-8u432-b06-linux-x64"
+Environment="JAVA_OPTS=-Djava.security.egd=file:///dev/urandom"
+
+Environment="CATALINA_PID=/home/tomcat9/tomcat/instances/instance2/tomcat.pid"
+Environment="CATALINA_BASE=/home/tomcat9/tomcat/instances/instance2"
+Environment="CATALINA_HOME=/home/tomcat9/tomcat/apache-tomcat-9.0.98"
+Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
+
+ExecStart=/home/tomcat9/tomcat/apache-tomcat-9.0.98/bin/startup.sh
+ExecStop=/home/tomcat9/tomcat/apache-tomcat-9.0.98/bin/shutdown.sh
+
+#RestartSec=10
+#Restart=always
+
+[Install]
+WantedBy=multi-user.target
