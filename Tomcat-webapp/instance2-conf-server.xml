@@ -1,0 +1,13 @@
+    <Connector port="8081" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8444"
+               maxParameterCount="1000"
+               />
+
+    <Server port="8006" shutdown="SHUTDOWN">
+
+
+    # defaults ports were changed to not conflict between two services
+
+
+    
