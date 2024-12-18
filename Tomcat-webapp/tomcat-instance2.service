@@ -17,6 +17,8 @@ Environment="CATALINA_BASE=/home/tomcat9/tomcat/instances/instance2"
 Environment="CATALINA_HOME=/home/tomcat9/tomcat/apache-tomcat-9.0.98"
 Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
 
+PIDFile=/home/tomcat9/tomcat/instances/instance2/tomcat.pid
+
 ExecStart=/home/tomcat9/tomcat/apache-tomcat-9.0.98/bin/startup.sh
 ExecStop=/home/tomcat9/tomcat/apache-tomcat-9.0.98/bin/shutdown.sh
 
