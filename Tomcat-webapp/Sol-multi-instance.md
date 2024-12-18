@@ -20,9 +20,36 @@ To start and stop even to see status of instances we need to create `unit` file 
 systemctl enable --now tomcat-instance1.service
 systemctl enable --now tomcat-instance1.service
 ```
+If Selinux is on enforcing mode then you need to change file , otherwise `systemd` couldn't start services..
+```
+semanage fcontext -a -t tomcat_var_run_t '<instance path>(/.*)?'
+semanage fcontext -a -t tomcat_exec_t '<catalina home directory>/bin(/.*)?'
+
+restorecon -Rv <catalina home directory>/bin
+restorecon -Rv <instance path>
+
+```
+
 Now, let's check our web applications on browser:
 ## Instance1 web app
 <img src="images/webapp.png">
 
 ## Instance2 web app
 <img src="images/instance2.png">
+
+## Method  (I did it on another VM )
+### Let's run instances with `instance-start.sh` file rather that unit file
+
+```
+mkdir /home/tomcat8/tomcat/controller
+cd controller
+# add instance-start.sh to this folder
+
+./instance-start.sh instance1
+./instance-start.sh instance2
+```
+Instance 1 started with `instance-start.sh`
+<img src="images/instance1-sh.png">
+
+Instance 2 started with `instance-start.sh`
+<img src="images/instance2-sh.png">
